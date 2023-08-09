@@ -10,5 +10,12 @@ class LengthStringProcessor : Processor {
      * @param input original string
      * @return modified string depending on the string length
      */
-    override fun process(input: String): String = TODO()
+    override fun process(input: String): String {
+        return when(input.length) {
+            in 0..5->"short $input"
+            in 6..10->"medium $input"
+            in 11..20->"long $input"
+            else->input
+        }
+    }
 }
